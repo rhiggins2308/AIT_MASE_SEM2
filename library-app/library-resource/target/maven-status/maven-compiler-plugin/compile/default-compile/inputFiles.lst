@@ -1,0 +1,12 @@
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/common/json/JsonUtils.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/common/model/HttpCode.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/common/model/StandardsOperationResults.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/common/json/OperationResultJsonWriter.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/common/json/JsonReader.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/common/exception/InvalidJsonException.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/category/resource/error/ErrorMessages.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/category/resource/CategoryResource.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/category/resource/error/ErrorMessage.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/common/json/JsonWriter.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/common/model/ResourceMessage.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-resource/src/main/java/com/library/app/common/model/OperationResult.java

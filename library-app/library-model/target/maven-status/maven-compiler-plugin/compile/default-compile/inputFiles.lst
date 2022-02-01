@@ -1,0 +1,7 @@
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-model/src/main/java/com/library/app/category/exception/CategoryExistentException.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-model/src/main/java/com/library/app/category/services/impl/CategoryServicesImpl.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-model/src/main/java/com/library/app/category/services/CategoryServices.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-model/src/main/java/com/library/app/category/repository/CategoryRepository.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-model/src/main/java/com/library/app/category/model/Category.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-model/src/main/java/com/library/app/category/exception/CategoryNotFoundException.java
+/Users/robbie/eclipse-workspace/AIT_MASE_SEM2/library-app/library-model/src/main/java/com/library/app/common/exception/FieldNotValidException.java
