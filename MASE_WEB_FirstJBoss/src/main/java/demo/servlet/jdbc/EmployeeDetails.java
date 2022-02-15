@@ -31,7 +31,8 @@ public class EmployeeDetails extends HttpServlet {
 			String user = "root", pwd = "@*data_rep";
 			//String user = "root", pwd = "root";
 			Connection connection = DriverManager.getConnection(url, user, pwd);
-
+			System.out.println("Some status about the connection : " + connection.isClosed());
+			
 			String sql = "SELECT * FROM employees ORDER BY name";
 			Statement statement = connection.createStatement();
 			ResultSet resultset = statement.executeQuery(sql);
@@ -50,9 +51,11 @@ public class EmployeeDetails extends HttpServlet {
 			connection.close();
 		} catch (SQLException se) {
 			// Handle errors for JDBC
+			System.out.println("SQL Exception Caught");
 			se.printStackTrace();
 		} catch (Exception e) {
 			// Handle errors for Class.forName
+			System.out.println("Some Other Exception Caught");
 			e.printStackTrace();
 		}
 	} // end try
