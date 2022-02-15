@@ -40,8 +40,21 @@ public class ConfirmEmployeeDetailsServlet extends HttpServlet {
 		
 		if (name.equals("")) {
 			out.println("<p>No name specified.</p>");
+			if (age.equals("")) {
+				out.println("<p>No age specified.</p>");
+				if (salary.equals("")) {
+					out.println("<p>No salary specified.</p>");
+				}
+			}
 		} else if (age.equals("")) {
-			out.println("<p>No age specified.</p>");
+				out.println("<p>No age specified.</p>");
+				if (salary.equals("")) {
+					out.println("<p>No salary specified.</p>");
+				} else {
+					if (salary.equals("")) {
+						out.println("<p>No salary specified.</p>");
+					}
+				} 
 		} else if (salary.equals("")) {
 			out.println("<p>No salary specified.</p>");
 		} else {

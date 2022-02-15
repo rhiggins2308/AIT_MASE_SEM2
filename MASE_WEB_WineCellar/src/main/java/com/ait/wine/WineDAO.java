@@ -71,8 +71,6 @@ public class WineDAO {
 		return wine;
 	}
 
-
-
 	public List<Wine> findByName(String name) {
 		List<Wine> list = new ArrayList<>();
 		Connection c = null;
@@ -98,8 +96,6 @@ public class WineDAO {
 		
 		return list;
 	}
-
-
 
 	public List<Wine> findByCountryAndGrapes(String country, String grapes) {
 		List<Wine> list = new ArrayList<>();

@@ -37,8 +37,14 @@ public class WineDAO {
 	}
 
 	public List<Wine> getWinesByCountry(String country) {
-		Query query=em.createQuery("SELECT w FROM Wine w WHERE w.country LIKE ?1");
-		query.setParameter(1, "%"+country.toUpperCase()+"%");
+		Query query = em.createQuery("SELECT w FROM Wine w WHERE w.country LIKE ?1");
+		query.setParameter(1, "%" + country.toUpperCase() + "%");
+		return query.getResultList();
+	}
+	
+	public List<Wine> getWinesByName(String name) {
+		Query query = em.createQuery("SELECT w FROM Wine w WHERE NAME LIKE ?1");
+		query.setParameter(1, "%" + name.toUpperCase() + "%");
 		return query.getResultList();
 	}
 }

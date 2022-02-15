@@ -27,7 +27,6 @@ public class WineWS {
 	@GET
 	@Produces ({ MediaType.APPLICATION_JSON })
 	public Response findAll() {
-		System.out.println("Get all wines");
 		List<Wine> wines = wineDao.getAllWines();
 		return Response.status(200).entity(wines).build();
 	}
@@ -42,8 +41,16 @@ public class WineWS {
 	
 	@GET @Path("search/{query}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	public List<Wine> findByCountry(@PathParam("query") String query) {
+	public List<Wine> findByName(@PathParam("query") String query) {
 		System.out.println("findByCountry: " + query);
+		return wineDao.getWinesByName(query);
+	}
+	
+	@GET
+	@Path("searchCountry/{query}")
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	public List<Wine> findByCountry(@PathParam("query") String query) {
+		System.out.println("Find by country: " + query);
 		return wineDao.getWinesByCountry(query);
 	}
 	
