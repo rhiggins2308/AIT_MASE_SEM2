@@ -162,5 +162,5 @@ public class Lab_6 {
 		}
 	}
 	
-	public void keyStoreSSLClient()
+	public void keyStoreSSLClient() {}
 }
