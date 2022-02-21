@@ -51,8 +51,7 @@ public class ProductCounter {
         System.out.println("=== Product Report ===");
         
         for (String key : productNames.keySet()) {
-        	System.out.println("Name: " + key);
-        	System.out.println("\t\tCount: " + productCountMap.get(productNames.get(key)));
+        	System.out.println("Name: " + key + "\tCount: " + productCountMap.get(productNames.get(key)));
         }
     }
 }
