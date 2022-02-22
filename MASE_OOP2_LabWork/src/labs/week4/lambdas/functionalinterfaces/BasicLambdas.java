@@ -57,13 +57,15 @@ public class BasicLambdas {
 	}
 	
 	public void consumer() {
+		
+		// *** Custom ***
 		// Printable<T> is a functional interface ... i.e. one abstract method:
 		//		void print(T t); // similar to java.util.function.Consumer
 		
 		Printable<String> lambda = s -> System.out.println(s);
 		lambda.print("Printable lambda");
 		
-		
+		// *** In the Java API ***
 		// Consumer is a functional interface ... i.e. one abstract method:
 		//		void accept(T t)
 		Consumer<String> consumer = s -> System.out.println(s); // lambda
@@ -74,12 +76,14 @@ public class BasicLambdas {
 	}
 	
 	public void supplier() {
+		
+		// *** Custom ***
 		// Retrievable<T> is a functional interface ... i.e. one abstract method:
 		//		T retrieve(); // similar to java.util.function.Supplier
 		Retrievable<Integer> lambda = () -> 77;
 		System.out.println("Retrievable: " + lambda.retrieve());
 		
-		
+		// *** In the Java API ***
 		// Supplier<T> is a functional interface ... i.e. one abstract method:
 		//		T get()
 		Supplier<Integer> supplier = () -> 77;
@@ -87,13 +91,15 @@ public class BasicLambdas {
 	}
 
 	public void predicate() {
+		
+		// *** Custom ***
 		// Evaluate<T> is a functional interface ... i.e. one abstract method:
 		//		boolean isNegative(T t); // similar to java.util.function.Predicate
 		Evaluate<Integer> lambda = i -> i < 0;
 		System.out.println("Evaluate: " + lambda.isNegative(-1));
 		System.out.println("Evaluate: " + lambda.isNegative(+1));
 		
-		
+		// *** In the Java API ***
 		// Predicate<T> is a functional interface i.e. one abstract method:
 		//		boolean test(T t);
 		Predicate<Integer> predicate = i -> i < 0;
@@ -123,12 +129,14 @@ public class BasicLambdas {
 	}
 		
  	public void function() {
-	 	// Functionable<T, R> is a functional interface i.e. one abstract method:
+	 	
+ 		// *** Custom ***
+ 		// Functionable<T, R> is a functional interface i.e. one abstract method:
 	 	//		R applyThis(T t);	// similar to java.util.function.Function
  		Functionable<Integer, String> lambda = i -> "Number is: " + i;
  		System.out.println("Functionable: " + lambda.applyThis(25));
  		
- 		
+ 		// *** In the Java API ***
  		// Function<T, R> is a functional interface i.e. one abstract method:
  		//		R apply(T t);
  		Function<Integer, String> function = i -> "Number is: " + i;
@@ -137,24 +145,24 @@ public class BasicLambdas {
 	}
 
  	private static void sortAge(List<Person> listPeople) {
-		listPeople.sort(Comparator.comparing(p -> p.getAge())); // lambda syntax
-		Comparator.comparing(Person::getAge); // method reference
+		listPeople.sort(Comparator.comparing(p -> p.getAge())); 	// lambda syntax
+		Comparator.comparing(Person::getAge); 						// method reference
 		
 		System.out.println("After Sort By Age");
-		listPeople.forEach(s -> System.out.println(s)); // lambda
-		listPeople.forEach(System.out::println); // method reference
+		listPeople.forEach(s -> System.out.println(s)); 			// lambda
+		listPeople.forEach(System.out::println); 					// method reference
 	}
  	
 	private static void sortName(List<Person> listPeople) {
 		// Note: In Java 8, the List interface supports the sort method directly,
 		//		so no need to use Collections.sort anymore
 		
-		listPeople.sort(Comparator.comparing(p -> p.getName())); // lambda syntax
-		Comparator.comparing(Person::getName); // method reference
+		listPeople.sort(Comparator.comparing(p -> p.getName())); 	// lambda syntax
+		Comparator.comparing(Person::getName); 						// method reference
 		System.out.println("After Sort By Name");
 		
-		listPeople.forEach(s -> System.out.println(s)); // lambda syntax
-		listPeople.forEach(System.out::println); // method reference
+		listPeople.forEach(s -> System.out.println(s)); 			// lambda syntax
+		listPeople.forEach(System.out::println); 					// method reference
 	}
 
 	

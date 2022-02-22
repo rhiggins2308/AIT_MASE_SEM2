@@ -8,7 +8,7 @@ public class GenericMethods {
 	}
 	
 	public static <T, U, V> void register(T t, U u, V v) {
-		Register<T, U, V§> register = new Register<>(t, u, v);
+		Register<T, U, V> register = new Register<>(t, u, v);
 		System.out.println("Register: " + register.getName() + "; " + register.getAge());
 	}
 	
