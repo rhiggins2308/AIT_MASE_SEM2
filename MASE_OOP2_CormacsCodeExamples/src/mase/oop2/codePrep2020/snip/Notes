@@ -1,0 +1,1 @@
+Anything in a collection that sorts itself must implement an interface to do so. Anything in a tree sorts itself.

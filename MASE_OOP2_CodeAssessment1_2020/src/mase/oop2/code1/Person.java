@@ -22,4 +22,10 @@ public class Person {
 	public String toString() {
 		return "Person{theName=" + this.theName + ", theAge=" + this.theAge + "}";
 	}
+	
+	@Override
+	public int compareTo(Person person) {
+		// TODO Auto-generated method stub
+		return this.getTheName().compareTo(person.getTheName());
+	}	
 }

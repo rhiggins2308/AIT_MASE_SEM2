@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/bootstrapV4.css" />
+	<link rel="stylesheet" href="css/font-awesome.css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="images/favicon.ico" rel="shortcut icon" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrapV4.js"></script>
+  	<script type="text/javascript" src="js/main.js"></script>
+  	
+	<title>CarNetwork</title>
+</head>
+
+<body>
+
+		<!-- should contain an image with clickable link, some small links -->
+		<header>
+			<div id="logo">
+				<img src="images/logo.png" alt="Car Network" />
+					<button id="searchButton" class="filterButton">Filter</button>
+			</div>
+		</header>
+		
+		
+		<!-- will dynamically be created when link in sidebar is clicked -->
+			<h2 id="whichCars">Showing all cars</h2>
+			<div class="list_cars_scroll">
+			</div>
+							
+		
+	 <div class="modal fade" id="detailsModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Details</h4>
+                    </div>
+                    <div class="modal-body" id="contents">
+
+
+                        <img id="pic" src="" height="150" width="200"/>
+                        <p></p>
+                        <label>Color:</label>
+                        <input type="text" id="color" name="color"><br/>
+                        <label>Year:</label>
+                        <input type="text" id="year" name="year"/><br/>
+                        <label>Engine:</label>
+                        <input type="text" id="engine" name="engine"/><br/>
+                        <label>Mileage:</label>
+                        <input type="text" id="miles" name="miles"/><br/>
+                        <label>Condition:</label>
+                        <input type="text" id="condition" name="condition"/><br/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<div class="modal fade" id="filterModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Filter By Year</h4>
+                    </div>
+                    <div class="modal-body" id="contents">
+                      <label>Minimum Year:</label>
+                        <input type="text" id="minYear" name="searchYear"><br/>
+                          <label>Maximum Year:</label>
+                        <input type="text" id="maxYear" name="searchYear"><br/>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="submitButton">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<footer>
+			<p>&copy;  CarNetwork Ltd. All Rights Reserved</p>
+			<p ><a href="">Manage Products</a> | <a href="">Location</a> | <a href="contact.html">Contact Us</a></p>
+		</footer>
+
+	
+
+</body>
+</html>

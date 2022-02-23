@@ -51,9 +51,10 @@ public class CollectUsingApiCollectors {
 		Map<Integer, String> map =
 				Stream.of("cake", "biscuits", "tart")
 				.collect(
-					Collectors.toMap(s -> s.length(),	// key is the length of the word
-									 s -> s,			// value is the dessert name
-									 (s1, s2) -> s1 + ", " + s2)	// Merge function - what to
+					Collectors.toMap(
+								s -> s.length(),	// key is the length of the word
+								s -> s,			// value is the dessert name
+								(s1, s2) -> s1 + ", " + s2)	// Merge function - what to
 																// do if we have duplicate keys
 																// - append the values
 				);

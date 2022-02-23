@@ -1,12 +1,14 @@
 package mase.oop2.code1;
 
-public class SomeClass {
+public class SomeClass<T> {
+	
+	private T t;
 
-	public void add() {
-	
+	public T get() {
+		return t;
 	}
-	
-	public void get() {
-		
+
+	public void add(T t) {
+		this.t =t;
 	}
 }

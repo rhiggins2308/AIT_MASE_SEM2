@@ -2,11 +2,13 @@ package mase.oop2.code1;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MASE_OOP2_CodeAssessment1_2020 {
 
@@ -14,12 +16,12 @@ public class MASE_OOP2_CodeAssessment1_2020 {
 	
 	public static void main(String[] args) {
 		
-		int choice = 0;
+		int userChoice = 0;
 		
 		do {
-			choice = userChoice();
+			userChoice = userChoice();
 			
-			switch (choice) {
+			switch (userChoice) {
 				case 1: lambdas();
 						break;
 				case 2: generics();
@@ -29,26 +31,37 @@ public class MASE_OOP2_CodeAssessment1_2020 {
 				default: System.out.println("Enter an option from 1 to 4");
 				 		break;
 			}
-		} while (choice != 4);
-		
-		
-
+		} while (userChoice != 4);
 	}
 	
 	public static void lambdas() {
 		List<Person> people = new ArrayList<>();
+		//List<Person> people = new ArrayList<>();
 		people.add(new Person("John", 25));
 		people.add(new Person("Mary", 21));
 		people.add(new Person("Tom", 30));
 		people.add(new Person("Niamh", 27));
 		
 		System.out.println("\nNormal insertion order:");
+		/*
+		 	for (Person person : people) {
+				System.out.println(person);
+			}
+		 */
+		
 		people.forEach(System.out::println);
+		/*
+		 	people.sort((p1, p2) -> p2.getTheAge().compareTo(p1.getTheAge())); 
+		 */		
 		
 		people.sort(Comparator.comparing(Person::getTheAge).reversed());
 		System.out.println("\nSorted by Age (descending order):");
 		people.forEach(System.out::println);
-		
+		/*
+		 	for (Person person : persons) {
+				System.out.println(person);
+			}
+		 */
 		
 		int x = 4;
 		System.out.println("Is " + x + " even? " + check(x, n -> n % 2 == 0));
@@ -69,11 +82,34 @@ public class MASE_OOP2_CodeAssessment1_2020 {
 	}
 
 	public static void generics() {
+		SomeClass<Person> otherP = new SomeClass<>();
+		otherP.add(new Person("Michael", 34));
+		System.out.println(otherP.get());
 		
+		SomeClass<String> otherS = new SomeClass<>();
+		otherS.add("Higgins");
+		System.out.println(otherS.get());
+		
+		SomeClass<Integer> otherI = new SomeClass<>();
+		otherI.add(10);
+		System.out.println(otherI.get());	
 	}
 
 	public static void collections() {
-		Map<String, Integer> slamWinners = new LinkedHashMap<>();
+
+		Map<String, Integer> slamWinners = new HashMap<>();
+		slamWinners.put("Djokovic", 17);
+		slamWinners.put("Federer", 20);
+		slamWinners.put("Nadal", 19);
+		slamWinners.put("Thiem", 0);
+		
+		slamWinners
+			.entrySet()
+			.stream()
+			
+			
+		
+		System.out.println(map);
 	}
 
 	public static <T> boolean check(T t, Predicate<T> lambda) {
