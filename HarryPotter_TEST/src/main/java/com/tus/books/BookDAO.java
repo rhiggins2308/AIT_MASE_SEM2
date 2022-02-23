@@ -36,6 +36,42 @@ public class BookDAO {
 		query.setParameter(1, "%" + illustrator + "%");
 		return query.getResultList();
 	}
+
+	public List<Book> getBookBySeries(String series) {
+		Query query = em.createQuery("SELECT b FROM Book b WHERE b.series LIKE ?1");
+		query.setParameter(1, "%" + series + "%");
+		return query.getResultList();
+	}
+
+	public List<Book> getBookLessThanRrp(Double rrp) {
+		Query query = em.createQuery("SELECT b FROM Book b WHERE b.rrp <= ?1");
+		query.setParameter(1, rrp);
+		return query.getResultList();
+	}
+
+	public List<Book> getBookMoreThanRrp(Double rrp) {
+		Query query = em.createQuery("SELECT b FROM Book b WHERE b.rrp >= ?1");
+		query.setParameter(1, rrp);
+		return query.getResultList();
+	}
+
+	public List<Book> getBookMoreThanOnline(Double onlinePrice) {
+		Query query = em.createQuery("SELECT b FROM Book b WHERE b.online >= ?1");
+		query.setParameter(1, onlinePrice);
+		return query.getResultList();
+	}
+
+	public List<Book> getBookLessThanOnline(Double onlinePrice) {
+		Query query = em.createQuery("SELECT b FROM Book b WHERE b.online >= ?1");
+		query.setParameter(1, onlinePrice);
+		return query.getResultList();
+	}
+
+	public List<Book> getBookByPriceDifference(Double difference) {
+		Query query = em.createQuery("SELECT b FROM Book b WHERE (b.rrp - b.online) = ?1");
+		query.setParameter(1, difference);
+		return query.getResultList();
+	}
 	
 	
 }

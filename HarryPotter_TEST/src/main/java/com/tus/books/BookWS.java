@@ -54,7 +54,7 @@ public class BookWS {
 		List<Book> books = bookDao.getBookByIllustrator(query);
 		return Response.status(200).entity(books).build();
 	}
-/*	
+	
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
 	@Path("series/{query}")
@@ -65,17 +65,33 @@ public class BookWS {
 	
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
-	@Path("rrp/{rrp}")
-	public Response findBookByRrp(@PathParam("rrp") Double rrp) {
-		List<Book> books = bookDao.getBookByRrp(rrp);
+	@Path("lessThanRrp/{rrp}")
+	public Response findBookLessThanRrp(@PathParam("rrp") Double rrp) {
+		List<Book> books = bookDao.getBookLessThanRrp(rrp);
+		return Response.status(200).entity(books).build();
+	}
+	
+	@GET
+	@Produces({MediaType.APPLICATION_JSON})
+	@Path("moreThanRrp/{rrp}")
+	public Response findBookMoreThanRrp(@PathParam("rrp") Double rrp) {
+		List<Book> books = bookDao.getBookMoreThanRrp(rrp);
 		return Response.status(200).entity(books).build();
 	}
 	
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
 	@Path("online/{online}")
-	public Response findBookByOnlinePrice(@PathParam("online") Double onlinePrice) {
-		List<Book> books = bookDao.getBookByOnlinePrice(onlinePrice);
+	public Response findBookMoreThanOnline(@PathParam("online") Double onlinePrice) {
+		List<Book> books = bookDao.getBookMoreThanOnline(onlinePrice);
+		return Response.status(200).entity(books).build();
+	}
+	
+	@GET
+	@Produces({MediaType.APPLICATION_JSON})
+	@Path("online/{online}")
+	public Response findBookLessThanOnline(@PathParam("online") Double onlinePrice) {
+		List<Book> books = bookDao.getBookLessThanOnline(onlinePrice);
 		return Response.status(200).entity(books).build();
 	}
 	
@@ -86,7 +102,7 @@ public class BookWS {
 		List<Book> books = bookDao.getBookByPriceDifference(difference);
 		return Response.status(200).entity(books).build();
 	}
-	
+/*	
 	@POST
 	@Produces({ MediaType.APPLICATION_JSON})
 	public Response saveBook(Book book) {
