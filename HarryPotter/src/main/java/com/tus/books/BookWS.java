@@ -34,4 +34,13 @@ public class BookWS {
 		Book book = bookDao.getBook(id);
 		return Response.status(200).entity(book).build();
 	}
+	
+	@GET
+	@Produces({MediaType.APPLICATION_JSON})
+	@Path("search/{query}")
+	public Response findBookBySeries(@PathParam("query") String query) {
+		List<Book> books = bookDao.getBookBySeries(query);
+		return Response.status(200).entity(books).build();
+	}
+	
 }

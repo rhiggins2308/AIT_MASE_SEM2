@@ -1,0 +1,80 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Harry Potter</title>
+	<link rel="stylesheet" href="css/bootstrapV4.css" />
+	<link rel="stylesheet" href="css/font-awesome.css" />
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+	<link href="images/favicon.ico" rel="shortcut icon" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrapV4.js"></script>
+  	<script type="text/javascript" src="js/main.js"></script>	
+</head>
+	
+<body>
+	<div id="page">
+	<header>
+	        <img src="images/HarryPotterLogo.png" alt="LOGO" width="120">
+			<h1>Hogwarts School of Witchcraft and Wizardy</h1>
+			
+    </header>
+			<div id="search">
+			<button id="searchButton" class="myButton">Search By Series</button>
+			</div>
+	<section id="bookList">
+		
+	</section>
+<div class="modal fade" id="detailsModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Details</h4>
+                    </div>
+                    <div class="modal-body" id="contents">
+                    <img id="pic" src="" height="200" />
+                        <p></p>
+                        <label>RRP:</label>
+                        <input type="text" id="rrp" name="rrp"><br/>
+                        <label>Online Price:</label>
+                        <input type="text" id="online_price" name="online_price"/><br/>
+                        <label>Saving:</label>
+                        <input type="text" id="saving" name="saving"/><br/>
+                        <h3></h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="filterModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Filter By Series</h4>
+                    </div>
+                    <div class="modal-body" id="contents">
+                      <label>Series:</label>
+                        <input type="text" id="series" name="series"><br/>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="submitButton">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+	<footer>
+		<p>&copy; Copyright MASE 2022</p>
+	</footer>
+	</div>
+</body>
+</html>
