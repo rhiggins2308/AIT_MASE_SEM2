@@ -1,4 +1,4 @@
-var rootURL = "http://localhost:8080/HarryPotter/rest/books";
+var rootURL = "http://localhost:8082/HarryPotter/rest/books";
 
 var renderList = function (data) {
 	$('#bookList').empty();
