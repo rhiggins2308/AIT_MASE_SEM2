@@ -32,6 +32,14 @@ public class CalendarWS {
 	
 	@GET
 	@Produces ({MediaType.APPLICATION_JSON})
+	@Path("/{id}")
+	public Response findCalendarById(@PathParam("id") int calId) {
+		Calendar calendar = calendarDao.getCalendar(calId);
+		return Response.status(200).entity(calendar).build();
+	}
+	
+	@GET
+	@Produces ({MediaType.APPLICATION_JSON})
 	@Path("type/{type}")
 	public Response findCalendarsByType(@PathParam("type") String calType) {
 		List<Calendar> calendars = calendarDao.getCalendarsByType(calType);

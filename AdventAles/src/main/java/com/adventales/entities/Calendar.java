@@ -15,14 +15,7 @@ public class Calendar {
 	private String calType;
 	private int calSize;
 	private double cost;
-	
-	public Calendar() {}
-	public Calendar(int calId, CalType calType, CalSize calSize, double cost) {
-		this.calId = calId;
-		this.calType = calType.getCalType();
-		this.calSize = calSize.getCalSize();
-		this.cost = cost;
-	}
+	private String image;
 
 	public int getCalId() {
 		return calId;
@@ -54,5 +47,13 @@ public class Calendar {
 
 	public void setCost(double cost) {
 		this.cost = cost;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 }

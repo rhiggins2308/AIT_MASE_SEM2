@@ -1,0 +1,6 @@
+Conditions				Valid Partitions	Invalid Partitions	Valid Values		Invalid Values
+**********				****************	******************	************		**************
+Hours per week			0, 20, 21, 49, 50,	-1, 121				0, 1, 19, 20, 21,	
+																22, 48, 49, 50,
+																49, 50, 51,
+																119, 120
