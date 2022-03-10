@@ -1,0 +1,10 @@
+Conditions				Valid Partitions	Invalid Partitions	Valid Values		Invalid Values
+Number of Marks			5					4, 6				5					3, 4, 
+																					6, 7
+
+Marks					0, 20				-1, 21				0, 1				-2, -1
+																19, 20				21, 22
+
+Individual Differences	0, 3				4					0, 1, 2, 3			4, 5	
+
+Total Differences		0, 10				11					0, 1, 9, 10			11, 12

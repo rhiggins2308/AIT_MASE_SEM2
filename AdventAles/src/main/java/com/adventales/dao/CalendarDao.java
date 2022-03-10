@@ -22,6 +22,10 @@ public class CalendarDao {
 		return query.getResultList();
 	}
 
+	public Calendar getCalendar(int calId) {
+		return em.find(Calendar.class, calId);
+	}
+	
 	public List<Calendar> getCalendarsByType(String calType) {
 		Query query = em.createQuery("SELECT c FROM Calendar c WHERE c.calType = ?1");
 		query.setParameter(1, calType);
@@ -33,4 +37,6 @@ public class CalendarDao {
 		query.setParameter(1, cost);
 		return query.getResultList();
 	}
+
+	
 }

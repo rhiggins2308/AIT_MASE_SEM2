@@ -14,7 +14,7 @@ public class User {
 	private String lastName;
 	private String dob;
 	private String pword;
-	
+/*	
 	public User() {}
 	public User(String userEmail, String firstName, String lastName, String dob, String pword) {
 		super();
@@ -24,7 +24,7 @@ public class User {
 		this.dob = dob;
 		this.pword = pword;
 	}
-	
+*/	
 	public String getUserEmail() {
 		return userEmail;
 	}

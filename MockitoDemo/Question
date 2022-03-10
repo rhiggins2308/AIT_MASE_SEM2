@@ -1,0 +1,23 @@
+Complete all of the Unit Tests in this Project (artifact id = MockitoDemo)
+using  Mockito.
+
+File MathMockVerfiyTest.java gives an example of 'When' usage
+File MathTest.java gives an example of Assert (junit)
+
+
+The parts to be completed are described in comments within the method , 
+and exist on their own line in each file. The comment marks the location wherr
+some code should be implemented by you. Typically it is one line of code.
+
+For example in class MathMockAddTest
+          //Create Math mock Object
+		 // Configure it to return 3 when arguments passed are 1,2
+		 
+A comment in a line that also contains Java statement is just for 
+explanation. A comment outside of a method is also for explanation.
+
+All tests should run. 
+
+Submit one Page report with all of the code (copy code to a txt document ) 
+and submit to moodle as per deadline schedule document on Moodle. Ensure your AIT Id, and you name is 
+included in the document. 
