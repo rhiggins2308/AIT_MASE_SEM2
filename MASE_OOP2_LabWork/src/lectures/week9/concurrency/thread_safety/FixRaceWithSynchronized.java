@@ -22,15 +22,32 @@ public class FixRaceWithSynchronized {
 	private static int count = 0;
 	
 	public synchronized static void addToCounter() {
-		// public static void addToCounter() {
-		//		synchronized(FixRaceWithSynchronized.class) {
-		//		synchronized(lock) {
+/* 	public static void addToCounter() {
+		synchronized(FixRaceWithSynchronized.class) { */
+//		synchronized(lock) { // use with Object lock declaration above
 		int c = count;
 		System.out.println("Before: " + count + ". Thread id: " + Thread.currentThread().getId());
+		count = c + 1; // not atomic
+		System.out.println("After. " + count + ". Thread id: " + Thread.currentThread().getId());
 	}
+/*	
+	public void addToCounter() {
+		synchronized(this) {
+			int c = count;
+			System.out.println("Before: " + count + ". Thread id: " + Thread.currentThread().getId());
+			count = c + 1; // not atomic
+			System.out.println("After. " + count + ". Thread id: " + Thread.currentThread().getId());
+		}
+	}
+*/	
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		// When synch on 'this' make sure all threads use the same instance
+		FixRaceWithSynchronized instance = new FixRaceWithSynchronized();
+		for (int i = 1; i <= 10; i++) {
+			new Thread(() -> instance.addToCounter())
+		//	new Thread(() -> addToCounter)
+					.start();
+		}
 	}
-
 }
