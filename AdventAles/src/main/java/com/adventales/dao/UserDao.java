@@ -33,15 +33,16 @@ public class UserDao {
 	}
 
 	public void registerUser(User user) {
+		System.out.println("Registering User: " + user.toString());
 		em.persist(user);
-	}
-	
-	public void update(User user) {
-		em.merge(user);
 	}
 
 	public void delete(String userEmail) {
 		em.remove(getUserByEmail(userEmail));
+	}
+
+	public void updatePassword(User user) {
+		em.merge(user);	
 	}
 
 	/*
