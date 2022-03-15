@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Q1</title>
+    <script>
+        window.onload = function(){
+            let bodyNode = document.getElementsByTagName("body")[0];
+            let nodes = bodyNode.childNodes.length;
+            console.log(nodes);
+            console.log("Elements: ")
+            for(var i=0; i<nodes; i++)
+                console.log(bodyNode.childNodes[i].nodeName+" --> "+bodyNode.childNodes[i].innerHTML);
+        }
+    </script>
+</head>
+<body>
+    <h1>Please join out email list</h1>
+    <form action="join.html" id="email_form" name="email_form" method="get">
+        <label for="email_address">Email Address</label>
+        <input type="text" id="email_address">
+    </form>
+</body>
+</html>
