@@ -31,4 +31,25 @@ public class UserDao {
 		
 		return null;
 	}
+
+	public void registerUser(User user) {
+		System.out.println("Registering User: " + user.toString());
+		em.persist(user);
+	}
+
+	public void delete(String userEmail) {
+		em.remove(getUserByEmail(userEmail));
+	}
+
+	public void updatePassword(User user) {
+		em.merge(user);	
+	}
+
+	/*
+	public List<User> getUsersBySomeCriteria(String someCriteria) {
+		Query query = em.createQuery("SELECT u FROM User u WHERE u.something LIKE ?1");
+		query.setParameter(1, "%" + someCriteria + "%");
+		return query.getResultList();
+	}
+	*/
 }
