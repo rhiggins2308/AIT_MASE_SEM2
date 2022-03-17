@@ -1,6 +1,0 @@
-analyseLocally=false
-eclipse.preferences.version=1
-extraProperties=sonar.host.url\=https\://analysis.apache.org/
-projectKey=org.apache.commons\:commons-lang3
-serverUrl=http\://localhost\:9000
-version=2
