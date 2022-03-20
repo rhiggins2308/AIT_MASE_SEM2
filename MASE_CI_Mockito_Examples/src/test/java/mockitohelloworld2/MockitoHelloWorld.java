@@ -11,8 +11,6 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import static mockitohelloworld2.Foo.*;
 
-
-
 public class MockitoHelloWorld {
 	private Foo foo;
     
@@ -32,5 +30,5 @@ public class MockitoHelloWorld {
     public void barGreets() {
         Bar bar = new Bar();
         assertEquals(HELLO_WORLD, bar.greet(foo));
-    }
+    }    
 }

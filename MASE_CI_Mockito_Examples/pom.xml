@@ -5,12 +5,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>MASE_CI_Mockito_Ex1</name>
   <description>MASE_CI_Mockito_Ex1</description>
-  
   <properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	    <maven.compiler.source>1.8</maven.compiler.source>
-  </properties>
-	
+  </properties>	
   <dependencies>
   	<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
 	<dependency>
