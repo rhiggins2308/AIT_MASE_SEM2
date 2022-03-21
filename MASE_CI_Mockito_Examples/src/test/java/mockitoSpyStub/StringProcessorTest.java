@@ -21,6 +21,7 @@ public class StringProcessorTest {
 	
 	@Mock
 	private Printer printer;
+	
 	@Spy
 	private SysoutPrinter sysoutPrinter;
 	

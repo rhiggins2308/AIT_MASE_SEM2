@@ -10,11 +10,8 @@ import org.mockito.ArgumentMatcher;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import static mockitobehaviour.Foo.*;
- 
 
 public class MockitoHelloWorld {
-
-
 	 
 	    private Foo foo;    
 	     
@@ -35,7 +32,7 @@ public class MockitoHelloWorld {
 	        Bar bar = new Bar();
 	        assertEquals(HELLO_WORLD, bar.greet(foo));
 	    }
-	     
+	    
 	    @Test(expected=FooNotAvailable.class)
 	    public void fooNotAvailable() {
 	        Bar bar = new Bar();
