@@ -1,4 +1,3 @@
-// Name:
 package mase.oop2.code1;
 
 import java.util.ArrayList;
@@ -56,48 +55,43 @@ public class MASE_OOP2_CodeAssessment1_2022 {
         students.stream()
         	.sorted((s1, s2) -> s1.getId().compareTo(s2.getId()))
         	.forEach((s) -> System.out.println(s.getId() + " " + s.getName()));
-
-        // B
-        Map<Integer, List<Student>> agesList =
-        		students.stream()
-        		.collect(
-        			Collectors.groupingBy(
-        				Student::getAge,
-        				TreeMap::new,
-        				Collectors.toList()
-        			)        			
-        		);
-        // revisit for output
-        System.out.println(agesList);
-        		
         
+        // B
+        students.stream()
+        	.collect(Collectors.groupingBy(Student::getAge, Collectors.mapping(Student::getName, Collectors.toList())))
+        	.forEach((key, value) -> { System.out.println(key + "->" + value);
+        	});
+        System.out.println();
+       
         // C
         OptionalDouble avgHeight = students.stream()
         	.filter(s -> s.getHeight() >= 2.0)
         	.mapToDouble(s -> s.getHeight())
-        	.average();
-        
+        	.average();        
         System.out.println("Average height (>= 2 metres): " + avgHeight.getAsDouble());
-        	
+                
+//        // C - Jacks version
+//        double avgAboveTwoMetres = students.stream()
+//        	.filter(student -> student.getHeight()>=2)
+//        	.mapToDouble(Student::getHeight)
+//        	.average().orElse(0);
+//        System.out.println("Average height (>= 2 metres): "+avgAboveTwoMetres);
+//        System.out.println();
+//        
         
         // D
-        Map<Integer, Double> studentHeightMap = 
-        		students.stream()
-        		.collect(
-        			Collectors.toMap(
-        						s -> s.getAge(),
-        						s -> s.getHeight(),
-        						(s1, s2) -> s1 + s2)
-        		
-        		);
-        // revisit for output      
-        System.out.println(studentHeightMap);
+        students.stream()
+        	.collect(Collectors.toMap(Student::getAge, Student::getHeight, (student1, student2) -> student1 + student2))
+        	.forEach((age, height) -> {
+	        	System.out.print(age + " " + height);
+	        	System.out.println();
+        	});
+        System.out.println();
         
         // E
         List<String> studentNames = students.stream()
         	.map(Student::getName)
         	.collect(Collectors.toList());
-        	//.forEach(System.out::print);
         System.out.println(studentNames);
     }
 
