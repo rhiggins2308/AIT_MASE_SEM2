@@ -2,7 +2,6 @@ package test.com.lac.tut.mockito;
 
 import static org.junit.Assert.assertSame;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,13 +19,17 @@ public class MathMockAddTest {
 	 * Create mock object before you use them
 	 */
 	public void create(){
-		 //Create Math mock Object
-		 // Configure it to return 3 when arguments passed are 1,2
+		//Create Math mock Object
+		mathObj= mock(Math.class);
+		
+		// Configure it to return 3 when arguments passed are 1,2
+		when(mathObj.add(1, 2)).thenReturn(3);
 	}
 	
 	@Test
 	public void test() {
 		 //Assert that math object return 3
+		assertSame(mathObj.add(1, 2), 3);
 	}
 
 }

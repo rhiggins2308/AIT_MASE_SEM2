@@ -17,7 +17,9 @@ public class MathMockMulTest {
 	@Before
 	public void create(){
 		mathObj= mock(Math.class);
-		 //Multiply any number with zero. The function should return zero
+		//Multiply any number with zero. The function should return zero
+		when(mathObj.mul(anyInt(), eq(0))).thenReturn(0);
+		when(mathObj.mul(eq(0), anyInt())).thenReturn(0);
 	}
 	
 	@Test
@@ -27,6 +29,9 @@ public class MathMockMulTest {
 	public void test() {
 		assertSame(mathObj.mul(1,0),0);
 		assertSame(mathObj.mul(3,0),0);
+		assertSame(mathObj.mul(0,1),0);
+		assertSame(mathObj.mul(0,3),0);
+		assertSame(mathObj.mul(0,0),0);
 	}
 
 }

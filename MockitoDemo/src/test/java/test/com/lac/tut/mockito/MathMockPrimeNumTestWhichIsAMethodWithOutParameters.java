@@ -17,11 +17,11 @@ public class MathMockPrimeNumTestWhichIsAMethodWithOutParameters {
 	public void create(){
 		mathObj= mock(Math.class); //Create Math Object
 		// Configure it to return 5 as prime number
+		when(mathObj.primeNumber()).thenReturn(5);
 	}
 	
 	@Test
 	public void test() {
 		assertSame(5, mathObj.primeNumber());
 	}
-
 }

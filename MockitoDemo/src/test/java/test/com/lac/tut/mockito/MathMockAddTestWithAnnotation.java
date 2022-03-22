@@ -30,5 +30,4 @@ public class MathMockAddTestWithAnnotation {
 	public void test() {
 		assertSame(3, mathObj.add(1,2));//Assert that math object return 3
 	}
-
 }
