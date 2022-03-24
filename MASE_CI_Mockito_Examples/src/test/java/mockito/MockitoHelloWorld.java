@@ -16,8 +16,14 @@ public class MockitoHelloWorld {
     public void fooGreets() {
     	// foo object is mocked
         Foo foo = mock(Foo.class);
+        
+        // Set up foo.greet() to return the STring variable HELLO_WORLD
         when(foo.greet()).thenReturn(HELLO_WORLD);
+        
         System.out.println("Foo greets: " + foo.greet());
+        
+        // Assert that the call to foo.greet() 
+        // returns the String variable value HELLO_WORLD 
         assertEquals(foo.greet(), HELLO_WORLD);
     }
 }
