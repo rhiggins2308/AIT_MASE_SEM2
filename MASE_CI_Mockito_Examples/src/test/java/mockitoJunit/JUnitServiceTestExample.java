@@ -83,7 +83,7 @@ public class JUnitServiceTestExample {
 		// was the method called twice?
 		verify(test, times(2)).getUniqueId();
 
-		// other alternatives for verifiying the number of method calls for a
+		// other alternatives for verifying the number of method calls for a
 		// method
 		verify(test, never()).someMethod("never called");
 		verify(test, atLeastOnce()).someMethod("called at least once");
