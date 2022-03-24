@@ -53,6 +53,9 @@ public class Student implements Comparable<Student>{
         return "\nStudent{" + "name=" + name + ", id=" + id + ", age=" + age + ", height=" + height + '}';
     }
 
+    /* 
+     * 1a - Modify the Student class so that its natural (ordinal) sort is by 'id'.
+     */
     @Override
     public int compareTo(Student otherStudent) {
         return this.id.compareTo(otherStudent.getId());

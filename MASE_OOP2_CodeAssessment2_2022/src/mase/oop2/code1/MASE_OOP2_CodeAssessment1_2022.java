@@ -51,19 +51,49 @@ public class MASE_OOP2_CodeAssessment1_2022 {
                                     new Student("C. Bloggs", "A013", 20, 1.7 )
         );
         
-        // A 
+        /* A
+         * stream the students; sort them by their natural order i.e. 'id' and
+         * output only the students id and name, separated by a space.
+         * Do not modify the toString() in Student.
+         * 	See sample output
+         * 
+         * A009 D. Bloggs
+         * A010 E. Bloggs
+         * A011 A. Bloggs
+         * A012 B. Bloggs
+         * A013 C. Bloggs         * 
+         */
         students.stream()
         	.sorted((s1, s2) -> s1.getId().compareTo(s2.getId()))
         	.forEach((s) -> System.out.println(s.getId() + " " + s.getName()));
         
-        // B
+        
+        
+        /* B
+         * stream the students; group the students by their age to a List of their names;
+         * in the output, separate the age from the list of names by an arrow, i.e. "->"
+         * 	See sample output
+         * 
+         * 19-> [B. Bloggs, D. Bloggs]
+         * 20-> [E. Bloggs, C. Bloggs]
+         * 22-> [A. Bloggs]
+         * 
+         */
         students.stream()
         	.collect(Collectors.groupingBy(Student::getAge, Collectors.mapping(Student::getName, Collectors.toList())))
         	.forEach((key, value) -> { System.out.println(key + "->" + value);
         	});
         System.out.println();
        
-        // C
+        
+        /* C
+         * stream the students; calculate (using the average() method from DoubleStream)
+         * the average height of students >= 2.0 (metres) tall.
+         * The return type of your pipeline should be double.
+         * 	See sample output
+         * 
+         * Average Height (>= 2 metres): 20.5
+         */        
         OptionalDouble avgHeight = students.stream()
         	.filter(s -> s.getHeight() >= 2.0)
         	.mapToDouble(s -> s.getHeight())
@@ -78,8 +108,18 @@ public class MASE_OOP2_CodeAssessment1_2022 {
 //        System.out.println("Average height (>= 2 metres): "+avgAboveTwoMetres);
 //        System.out.println();
 //        
+
         
-        // D
+        /* D
+         * stream the students; collect into a Map
+         * where the key is the student age and the value is the student height.
+         * If you get duplicate keys, add the values.
+         * 	See sample output
+         * 
+         * 19 3.7
+         * 20 3.8
+         * 22 2.0
+         */
         students.stream()
         	.collect(Collectors.toMap(Student::getAge, Student::getHeight, (student1, student2) -> student1 + student2))
         	.forEach((age, height) -> {
@@ -88,7 +128,12 @@ public class MASE_OOP2_CodeAssessment1_2022 {
         	});
         System.out.println();
         
-        // E
+        /* E
+         * stream the students; collect into a List where the list only contains the student names.
+         * See sample output.
+         * 
+         * [A. Bloggs, B. Bloggs, E. Bloggs, D. Bloggs, C. Bloggs]
+         */
         List<String> studentNames = students.stream()
         	.map(Student::getName)
         	.collect(Collectors.toList());
@@ -121,6 +166,11 @@ public class MASE_OOP2_CodeAssessment1_2022 {
         makeToCountry.put("BMW", "Germany");
         makeToCountry.put("Nissan", "Japan");
 
+        
+        /*
+         * 2a Given teh 'makeToSales' and 'makeToCountry' maps;
+         * 		populate the 'salesByCoiuntry' (country -> sales) map.
+         */
         // Setup "salesByCountry"
         // country -> number of sales (total)   
         makeToSales.forEach((make, sales) ->{
@@ -134,22 +184,35 @@ public class MASE_OOP2_CodeAssessment1_2022 {
             }            
         });
 
-        
+        /*
+         * 2b. Output the details of 'salesByCountry' using forEach(BiConsumer).
+         * 		See sample output
+         * 
+         * country: Germany; numSales:49000
+         * country: Japan; numSales:15000
+         * country: USA; numSales:25000
+         */
         // Output "salesByCountry"
         salesByCountry.forEach(
             (country, sales) -> 
                 System.out.println("country: "+country+"; numSales:"+sales));
     
-        // What country has the most/least sales?
-        	int minSales = Collections.min(salesByCountry.values());
-        	int maxSales = Collections.max(salesByCountry.values());
-        
-        	salesByCountry.forEach((country, sales) -> {
-            if (sales == maxSales) {
-                System.out.println("Country with most sales: " + country + " " + sales);
-            } else if (sales == minSales) {
-                System.out.println("Country with least sales: " + country + " " + sales);
-            }
+        /*
+         * 2c. Calculate and output the country with the least and most sales.
+         * 		See sample output
+         * 
+         * Country with the most sales: Germany 49000
+         * Country with the least sales: Japan 15000
+         */
+    	int minSales = Collections.min(salesByCountry.values());
+    	int maxSales = Collections.max(salesByCountry.values());
+    
+    	salesByCountry.forEach((country, sales) -> {
+	        if (sales == maxSales) {
+	            System.out.println("Country with most sales: " + country + " " + sales);
+	        } else if (sales == minSales) {
+	            System.out.println("Country with least sales: " + country + " " + sales);
+	        }
         });
     }
 
@@ -163,12 +226,45 @@ public class MASE_OOP2_CodeAssessment1_2022 {
                                     new Student("C. Bloggs", "A013", 20, 1.7 )
         );
 
+        
         System.out.println("Default sort (by id)");
+        
+        /*
+         * 1b. Using the Collections class's sort(List) method, sort the list.
+         */
         Collections.sort(students);
+        
+        /*
+         * 1c. Output the list using List's forEach(Consumer). See example output
+         * 
+         * Default sort (by id)
+         * Student{name=D. Bloggs, id=A009, age=19, height=1.8}
+         * Student{name=E. Bloggs, id=A010, age=20, height=2.1}
+         * Student{name=A. Bloggs, id=A011, age=22, height=2.0}
+         * Student{name=B. Bloggs, id=A012, age=19, height=1.9}
+         * Student{name=C. Bloggs, id=A013, age=20, height=1.7}
+         * 
+         */
         students.forEach(System.out::print);
         
         System.out.println("Sort by name");
+        
+        /*
+         * 1d. Using the Collections class's sort(List, Comparator) method, sort the list.
+         */
         students.sort(Comparator.comparing(Student::getName));
+        
+        /*
+         * 1e. Output the list using List's forEach(Consumer). See example output
+         * 
+         * Sort by name
+         * Student{name=A. Bloggs, id=A011, age=22, height=2.0}
+         * Student{name=B. Bloggs, id=A012, age=19, height=1.9}
+         * Student{name=C. Bloggs, id=A013, age=20, height=1.7}
+         * Student{name=D. Bloggs, id=A009, age=19, height=1.8}
+         * Student{name=E. Bloggs, id=A010, age=20, height=2.1}
+         * 
+         */
         students.forEach(System.out::print);
     }
     
