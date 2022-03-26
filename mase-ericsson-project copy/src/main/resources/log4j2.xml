@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+  <Properties>
+    <Property name="filename">./logs</Property>
+  </Properties>
+  <Appenders>
+  	<RollingFile 	name="rollingLogFile"
+  					fileName="${filename}/%d{yyyy-MM-dd-hh-mm}-errorLog.log"
+  					filePattern="${filename}/%d{yyyy-MM-dd-hh-mm}-errorLog.log">
+  	<!-- fileName="errorLog.log" -->
+  	<!-- <FileName>"errorLog.log"</FileName> --> 		
+  	<!-- 	<FilePattern>log/%d{yyyy-MM-dd-hh-mm}.log</FilePattern>  -->
+  		<PatternLayout pattern="%d{yyyy-MMM-dd-HH:mm}_[%t]_%-5level %logger{36} - %msg%n" />
+  		<Policies>
+        	<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+      	</Policies>
+      	<DefaultRolloverStrategy max="5" />	
+  	</RollingFile>  	
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console> 
+  </Appenders>
+  <Loggers>
+   <Logger name="invalidRecords" level="info">
+      <AppenderRef ref="rollingLogFile"/>
+      <AppenderRef ref="Console"/>
+    </Logger>
+    <Root level="info">
+      <AppenderRef ref="rollingLogFile"/>
+ <!--      <AppenderRef ref="Console"/>  -->
+    </Root>
+  </Loggers>
+</Configuration>

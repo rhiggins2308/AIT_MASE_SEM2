@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+    http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+    version="1.0">
+    <persistence-unit name="networkEventsDB">
+		<class>mase.ericsson.entities.EventCause</class>   
+        <class>mase.ericsson.entities.FailureClass</class>     
+        <class>mase.ericsson.entities.MccMnc</class>
+	    <class>mase.ericsson.entities.UserEquipment</class>
+	    <class>mase.ericsson.entities.BaseData</class>
+	  	<class>mase.ericsson.entities.User</class>
+		
+
+	    <properties>
+	    	<property name="javax.persistence.jdbc.url" value="jdbc:mysql://139.59.165.255:3306/networkEvents"/>
+        	<property name="javax.persistence.jdbc.user" value="root"/>	
+        	<property name="javax.persistence.jdbc.password" value="t34mP0ss1bl3"/>
+        	<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
+		</properties>
+    </persistence-unit>
+</persistence>

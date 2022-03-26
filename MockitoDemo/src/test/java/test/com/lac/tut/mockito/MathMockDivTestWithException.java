@@ -27,5 +27,4 @@ public class MathMockDivTestWithException {
 	@Test(expected=ArithmeticException.class) //expect the method throws ArithmeticException
 	public void test() {
 		mathObj.div(1,0); //call the div and expect to return ArithmeticException
-	}
-}
+	}}

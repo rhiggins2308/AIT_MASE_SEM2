@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>System User Registration</title>
+    <link rel="icon" type="image/png" href="assets/img/Networks/favicon-16x16.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="assets/js/employeeAdd.js"></script>
+    <script src="assets/js/J-Query.js"></script>
+    <script src="https://kit.fontawesome.com/745c56dfa6.js" crossorigin="anonymous"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+</head>
+
+<body class="bg-gradient-primary" style="background-image: url(&quot;assets/img/Networks/grid.webp&quot;);">
+    <div id="wrapper">
+          <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0"><a
+                    class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+                    href="#">
+                    <div class="sidebar-brand-icon"><i class="fa-solid fa-tower-broadcast fa-beat" style="--fa-animation-duration: 6s; "></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>Team</span><br><span>Possible!</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link active" href="login.html"><i class="fa fa-sign-out"></i>
+						<span>Logout</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="upload.html"><i class="fa-solid fa-upload"></i>
+                        <span>Import Data</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="UserRegistration.html"><i class="fa-solid fa-user-plus"></i>
+                    </i><span>Register User</span></a></li>
+                </ul>
+
+            </div>
+        </nav>
+        <div class="container" style="opacity:0.9;">
+            <div class="card shadow-lg o-hidden border-0 my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h4 class="text-dark mb-4">Register a user.</h4>
+                            </div>
+                            <form class="userRegistraion" id="userReg" name="userReg">
+                                <div class="row mb-3">
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user"
+                                            type="text" id="firstName" placeholder="First Name" name="firstName"></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="text"
+                                            id="lastName" placeholder="Last Name" name="lastName"></div>
+                                </div>
+                                <div class="mb-3">
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user"
+                                            type="password" id="password" placeholder="Password" name="password"></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="password"
+                                            id="passwordRepeat" placeholder="Confirm Password" name="passwordRepeat">
+                                    </div>
+                                </div>
+                                <select class="form-select" aria-label="Default select example" id="employeeType"
+                                    name="employeeType">
+                                    <option selected>Choose Employee Type</option>
+                                    <option value="customerservicerepresentative">Customer Service Representative
+                                    </option>
+                                    <option value="supportengineer">Support Engineer</option>
+                                    <option value="networkmanagementengineer">Network Management Engineer</option>
+                                </select>
+                                <hr>
+                                <div class= "messgae">
+                                <div class="row mb-3">
+                                    <button class="btn btn-primary d-block btn-user w-100" type="submit" id="regBtn"
+                                        name="regBtn">Register User </button>
+                                <br>
+                                <hr>
+                                <hr>
+                                
+                                <button class="btn btn-primary d-block btn-user w-100" type="button" id="allUserBtn"
+                                name="allUserBtn">List registered users. </button>
+                                </div>
+
+
+                                </div>
+                                
+                            </form>
+                             
+                        </div>
+                       
+                    </div>
+                </div>
+
+                 <ul id="userList" style="padding:20px;"></ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

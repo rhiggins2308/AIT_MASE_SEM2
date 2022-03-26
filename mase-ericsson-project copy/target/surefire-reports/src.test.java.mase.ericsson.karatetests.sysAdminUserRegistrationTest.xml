@@ -1,0 +1,103 @@
+<testsuite failures="3" name="src/test/java/mase/ericsson/karatetests/sysAdminUserRegistrationTest.feature" skipped="0" tests="4" time="0.430219">
+  <testcase classname="src.test.java.mase.ericsson.karatetests.sysAdminUserRegistrationTest" name="User Registration" time="0.269337">
+    <failure message="sysAdminUserRegistrationTest.feature:8 - &#10;org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)">Given url 'http://localhost:8082/mase-group-project/rest/users/register' .. passed
+And request {"userType": 1, "firstName": test, "lastName": Service, "password": password} . passed
+When method POST .......................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: sysAdminUserRegistrationTest.feature:8 - 
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+	at ✽.When method POST (sysAdminUserRegistrationTest.feature:8)
+
+Then status 201 ........................................................... skipped</failure>
+  </testcase>
+  <testcase classname="src.test.java.mase.ericsson.karatetests.sysAdminUserRegistrationTest" name="User Registration" time="0.001538">
+    <failure message="sysAdminUserRegistrationTest.feature:8 - &#10;org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)">Given url 'http://localhost:8082/mase-group-project/rest/users/register' .. passed
+And request {"userType": 1, "firstName": test, "lastName": Service, "password": password} . passed
+When method POST .......................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: sysAdminUserRegistrationTest.feature:8 - 
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+	at ✽.When method POST (sysAdminUserRegistrationTest.feature:8)
+
+Then status 201 ........................................................... skipped
+Given url 'http://localhost:8082/mase-group-project/rest/users/register' .. passed
+And request {"userType": 2, "firstName": test, "lastName": Support, "password": password} . passed
+When method POST .......................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: sysAdminUserRegistrationTest.feature:8 - 
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+	at ✽.When method POST (sysAdminUserRegistrationTest.feature:8)
+
+Then status 201 ........................................................... skipped</failure>
+  </testcase>
+  <testcase classname="src.test.java.mase.ericsson.karatetests.sysAdminUserRegistrationTest" name="User Registration" time="0.02734">
+    <failure message="sysAdminUserRegistrationTest.feature:8 - &#10;org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)">Given url 'http://localhost:8082/mase-group-project/rest/users/register' .. passed
+And request {"userType": 1, "firstName": test, "lastName": Service, "password": password} . passed
+When method POST .......................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: sysAdminUserRegistrationTest.feature:8 - 
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+	at ✽.When method POST (sysAdminUserRegistrationTest.feature:8)
+
+Then status 201 ........................................................... skipped
+Given url 'http://localhost:8082/mase-group-project/rest/users/register' .. passed
+And request {"userType": 2, "firstName": test, "lastName": Support, "password": password} . passed
+When method POST .......................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: sysAdminUserRegistrationTest.feature:8 - 
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+	at ✽.When method POST (sysAdminUserRegistrationTest.feature:8)
+
+Then status 201 ........................................................... skipped
+Given url 'http://localhost:8082/mase-group-project/rest/users/register' .. passed
+And request {"userType": 3, "firstName": test, "lastName": Network, "password": password} . passed
+When method POST .......................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: sysAdminUserRegistrationTest.feature:8 - 
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+	at ✽.When method POST (sysAdminUserRegistrationTest.feature:8)
+
+Then status 201 ........................................................... skipped</failure>
+  </testcase>
+  <testcase classname="src.test.java.mase.ericsson.karatetests.sysAdminUserRegistrationTest" name="List all Existing Users for System Administrator" time="0.132003">
+    <system-out>Given url 'http://localhost:8082/mase-group-project/rest/users/register' .. passed
+And request {"userType": 1, "firstName": test, "lastName": Service, "password": password} . passed
+When method POST .......................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: sysAdminUserRegistrationTest.feature:8 - 
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+	at ✽.When method POST (sysAdminUserRegistrationTest.feature:8)
+
+Then status 201 ........................................................... skipped
+Given url 'http://localhost:8082/mase-group-project/rest/users/register' .. passed
+And request {"userType": 2, "firstName": test, "lastName": Support, "password": password} . passed
+When method POST .......................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: sysAdminUserRegistrationTest.feature:8 - 
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+	at ✽.When method POST (sysAdminUserRegistrationTest.feature:8)
+
+Then status 201 ........................................................... skipped
+Given url 'http://localhost:8082/mase-group-project/rest/users/register' .. passed
+And request {"userType": 3, "firstName": test, "lastName": Network, "password": password} . passed
+When method POST .......................................................... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: sysAdminUserRegistrationTest.feature:8 - 
+org.apache.http.conn.HttpHostConnectException: Connect to localhost:8082 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused (Connection refused)
+	at ✽.When method POST (sysAdminUserRegistrationTest.feature:8)
+
+Then status 201 ........................................................... skipped
+Given url 'http://139.59.165.255:8084/mase-group-project/rest/users/allUsers' . passed
+When method GET ........................................................... passed
+Then status 200 ........................................................... passed</system-out>
+  </testcase>
+</testsuite>

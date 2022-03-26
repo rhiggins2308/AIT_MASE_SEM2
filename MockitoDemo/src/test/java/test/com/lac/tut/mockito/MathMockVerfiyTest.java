@@ -1,11 +1,11 @@
 package test.com.lac.tut.mockito;
 
 import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Matchers;
 
 import com.lac.tut.mockito.Math;
 
@@ -25,10 +25,10 @@ public class MathMockVerfiyTest {
 		assertSame(mathObj.add(1,2),3);
 		
 		//Verify whether add method is tested with arguments 1,2 
-		verify(mathObj, atLeastOnce()).add(1, 2);
+		verify(mathObj).add(Matchers.eq(1), Matchers.eq(2));
 		
 		//Verify whether add method is called only once
-		verify(mathObj, atMost(1)).add(1, 2);
+		verify(mathObj, times(1)).add(anyInt(), anyInt());
 	}
 
 }

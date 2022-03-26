@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>NME Failure Queries</title>
+<link rel="icon" type="image/png" href="assets/img/Networks/favicon-16x16.png">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+<link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+<script src="https://kit.fontawesome.com/745c56dfa6.js" crossorigin="anonymous"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+
+<!--  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>  -->
+<script src="assets/js/J-Query.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrapV4.js"></script>
+<script src="assets/js/nmeQueries.js"></script>
+
+<!-- <script src="datatables/js/jquery.js"></script> -->
+<script src="assets/js/datatables.js"></script>
+<!-- <script src="datatables/js/imsiDateRangeTable.js"></script> -->
+<link rel="stylesheet" href="assets/bootstrap/css/datatables.css" />
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script> -->
+
+</head>
+
+<body class="bg-gradient-primary"
+	style="background-image: url(&quot;assets/img/Networks/grid.webp&quot;);">
+	<div id="wrapper">
+		 <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+			<div class="container-fluid d-flex flex-column p-0">
+				<a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+					<div class="sidebar-brand-icon">
+						<i class="fa-solid fa-tower-broadcast fa-beat" style="-fa-animation-duration: 6s;"></i>
+					</div>
+					<div class="sidebar-brand-text mx-3">
+						<span>Team</span><br/><span>Possible!</span>
+					</div>
+				</a>
+				<hr class="sidebar-divider my-0">
+				<ul class="navbar-nav text-light" id="accordionSidebar">
+					<li class="nav-item"><a class="nav-link active" href="login.html"><i class="fa fa-sign-out"></i>
+						<span>Logout</span></a></li>
+					<li class="nav-item dropdown" id="NetworkEngItem">
+				        <a class="nav-link dropdown-toggle" href="#" name="NetworkEng" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Network Management</a>
+			        	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				          	<a class="dropdown-item" href="network.html"><i class="fa-solid fa-question"></i> Count Failures/Duration<br/>By IMSI for Period</a>
+				          	<a class="dropdown-item" href="NwEnggModelBasedQuery.html"><i class="fa-solid fa-phone"></i> Unique Failure Type & Freq.<br/>By Phone Model</a>
+				          	<a class="dropdown-item" href="GraphnmeTop10FailuresByDateRange.html"><i class="fa-solid fa-question"></i> Top 10 Failure Frequency<br/>By Group for Period</a>
+				          	<a class="dropdown-item" href="NmeTop10FailuresGraphical.html"><i class="fa-solid fa-question"></i> Top 10 Failure Frequency</a>
+				          	<a class="dropdown-item" href="TP_27_Top10IMSI.html"><i class="fa-solid fa-phone"></i> Top 10 Failure Frequency<br/>By IMSI for Period</a>
+				    	</div>
+				  	</li>
+				    <li class="nav-item dropdown" id="SupportEngItem">
+				        <a class="nav-link dropdown-toggle" href="#" name="SupportEng" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Support Engineer</a>
+			        	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				          	<a class="dropdown-item" href="imsiDateRange.html"><i class="fa-solid fa-question"></i> Failures By IMSI<br/>for Period</a>
+				          	<a class="dropdown-item" href="UENumber.html"><i class="fa-solid fa-phone"></i> # Failures By Phone Model<br/>for Period</a>
+				    		<a class="dropdown-item" href="imsiByFailureClass.html"><i class="fa-solid fa-question"></i> IMSI Failures by Class</a>
+				       	</div>
+			      	</li>
+				    <li class="nav-item dropdown" id="CustomerRepItem">
+				        <a class="nav-link dropdown-toggle" href="#" name="CustomerRep" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Customer Service</a>
+			        	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				          	<a class="dropdown-item" href="ServiceRepHome.html"><i class="fa-solid fa-question"></i> Failure Details By IMSI</a>
+				          	<a class="dropdown-item" href="TP21.html"><i class="fa-solid fa-question"></i> Count Failures By IMSI<br/>for Period</a>
+							<a class="dropdown-item" href="CauseCodeByImsi.html"><i class="fa-solid fa-phone"></i> Unique Failure Cause<br/>by IMSI</a>
+				    	</div>
+			      	</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container" style="opacity: 0.9;">
+			<div class="card shadow-lg o-hidden border-0 my-5">
+				<div class="card-body p-0">
+					<div class="row">
+
+						<div class="p-5">
+							<div class="text-center">
+								<h4 class="text-dark mb-4">Top 10 Failures by Group (Market/Operator/Cell ID)</h4>
+							</div>
+							<label for="starttime">Enter Start Date & Time:</label> <input
+								type="datetime-local" id="start_date" name="start_date">
+							<label for="endtime">Enter End Date & Time:</label> <input
+								type="datetime-local" id="end_date" name="end_date">
+
+
+							<button id="btnSearch">Submit</button>
+							<button id="btnRefresh" onClick="window.location.reload();">Refresh Page</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+			<div class="container1">
+				<div class="card shadow-lg o-hidden border-0 my-5">
+			    	<canvas id="myChart" style="width:100%;max-width:600px;display:none"></canvas>
+			    </div>	
+  			</div>
+			
+		</div>
+		<div class="container" style="opacity: 0.9; ">
+			<div class="card shadow-lg o-hidden border-0 my-5">
+
+				<div class="card-body p-1" > 
+				 	<div class="row"> 
+				 	<div class="leftArea">  
+						<table id="table_id" class="table table-striped table-hover">
+							<thead>
+								<tr>
+									<td>Market</td>
+									<td>Operator</td>
+									<td>Cell ID</td>
+									<td>No. Failures</td>
+							</thead>
+							<tbody id="table_body"></tbody>
+						</table>
+			 	   	</div> 
+				 	</div>  
+			  	</div> 
+				
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal fade" id="dateErrorModal" role="dialog">
+    	<div class="modal-dialog">
+        	<div class="modal-content">
+            	<div class="modal-header">
+                	<button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Date Input Error</h4>
+             	</div>
+                <div class="modal-body" id="contents">
+                	<p>Please ensure your Start Date/Time is prior to your End Date/Time</p>
+             	</div>
+                <div class="modal-footer">
+                 	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+         	</div>
+      	</div>
+ 	</div>
+ 	
+ 	<div class="modal fade" id="noDataModal" role="dialog">
+    	<div class="modal-dialog">
+        	<div class="modal-content">
+            	<div class="modal-header">
+                	<button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">No Data</h4>
+             	</div>
+                <div class="modal-body" id="contents">
+                	<p>There are no Failure Events to display for your chosen date range.</p>
+             	</div>
+                <div class="modal-footer">
+                 	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+         	</div>
+      	</div>
+ 	</div>
+	<!--  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script -->
+	>
+	
+	
+</body>
+
+</html>
