@@ -1,4 +1,5 @@
-rootURL = "http://localhost:8082/AdventAles/rest/users/login";
+//rootURL = "http://localhost:8082/AdventAles/rest/users/login";
+rootURL = "rest/users/login";
 
 var emptyTheForm = function() {
 	$('#userEmail').empty();
