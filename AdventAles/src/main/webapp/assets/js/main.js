@@ -1,4 +1,5 @@
-var rootURL = "http://localhost:8082/AdventAles/rest/calendars";
+//var rootURL = "http://localhost:8082/AdventAles/rest/calendars";
+var rootURL = "rest/calendars";
 
 var renderList = function (data) {
 	$('#calendarList').empty();

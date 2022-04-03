@@ -1,4 +1,4 @@
-rootURL = "http://localhost:8082/AdventAles/rest/users/register";
+rootURL = "rest/users/register";
 
 var successMessage = function(){
 	$('#regSuccess').remove();
@@ -40,22 +40,13 @@ var registerUser = function () {
 
 function validate() {
 	var firstName = $('#firstName').val();
-    console.log("firstName: " + $('#firstName').val());
-	var lastName = $('#lastName').val();
-    console.log("lastName: " + $('#lastName').val());
-	var userEmail =  $('#userEmail').val(); 
-    console.log("userEmail: " + $('#userEmail').val());
-	var dobDay = $('#dobDay').val();
-	console.log("dobDay: " + $('#dobDay').val());
+    var lastName = $('#lastName').val();
+    var userEmail =  $('#userEmail').val(); 
+    var dobDay = $('#dobDay').val();
 	var dobMonth = $('#dobMonth').val();
-	console.log("dobMonth: " + $('#dobMonth').val());
 	var dobYear = $('#dobYear').val();
-    console.log("dobYear: " + $('#dobYear').val());
-	var userPassword = $('#userPassword').val();
-    console.log("userPassword: " + $('#userPassword').val());
-	var verifyPassword = $('#verifyPassword').val();
-	console.log("verifyPassword: " + $('#verifyPassword').val());
-	
+    var userPassword = $('#userPassword').val();
+    var verifyPassword = $('#verifyPassword').val();
 	var emailTemplate = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	
     if (firstName==null || firstName=="" || lastName==null || lastName=="") { 
@@ -64,7 +55,7 @@ function validate() {
     } if (!emailTemplate.test(userEmail)) {
 		$('#invalidEmail').html("Email must be in valid format"); 
      	return false; 
-	} else if (dobDay==null || dobDay=="" || dobMonth==null || dobYear==null) {
+	} else if (dobDay==null || dobDay=="" || dobMonth==null || dobMonth=="" || dobYear==null || dobYear=="") {
 		$('#invalidDOB').html("Date of Birth is required"); 
      	return false;
 	} else if (userPassword.length < 6 || verifyPassword.length < 6) { 
@@ -99,6 +90,10 @@ var clearErrorFields = function() {
 };
 
 $(document).ready(function () {
+	clearErrorFields();
+	emptyTheForm();
+	document.getElementById("firstName").focus();
+	
 	$(document).on('click', '.btn-user', function () {
 		clearErrorFields();
 		if(validate()) {

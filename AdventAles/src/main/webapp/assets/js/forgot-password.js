@@ -1,4 +1,5 @@
-rootURL = "http://localhost:8082/AdventAles/rest/users/ ..... ";
+//rootURL = "http://localhost:8082/AdventAles/rest/users/ ..... ";
+rootURL = "rest/users/ ..... ";
 
 $(document).ready(function () {
 	$("#pwordGroup").hide();
