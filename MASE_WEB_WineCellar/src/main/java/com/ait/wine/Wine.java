@@ -1,9 +1,9 @@
 package com.ait.wine;
 
-import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlRootElement;
 
 
-@XmlRootElement
+//@XmlRootElement
 public class Wine {
 
     private int id;

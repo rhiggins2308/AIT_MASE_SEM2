@@ -46,10 +46,7 @@ var addCartItem = function(data) {
 		url: cartUrl + "/add",
 		dataType: "json",
 		data: itemToJSON(data),
-		success: function() {
-			alert("done");
-			// to be updated
-		}
+		success: console.log("item added to cart")
 	});
 }
 
@@ -60,8 +57,7 @@ var addToCart = function(id) {
 		dataType: "json",
 		success: function(data) {
 			addCartItem(data);	
-		},		
-		error: console.log("some error with addToCart() function")
+		}
 	});
 };
 
