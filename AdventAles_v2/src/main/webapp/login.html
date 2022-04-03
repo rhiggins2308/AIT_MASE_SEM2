@@ -49,7 +49,7 @@
 						<a class="nav-link" href="login.html">Login/Register</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Cart</a>
+						<a class="nav-link" href="cart.html">Cart</a>
 					</li>
 				</ul>
 			</div>
@@ -70,19 +70,20 @@
                                         <h4 class="text-dark mb-4">Welcome Back!</h4>
                                     </div>
                                     <form class="user">
-                                         <div class="mb-3 input-group">
+                                         <div class="mb-3 input-group" id="enterEmail">
 	                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
 	                                        <input class="form-control form-control-user" type="email" id="userEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email">
-                                        </div>
-                                        <div class="mb-3 input-group">
+	                                    </div>
+                                        <div class="mb-3 input-group" id="enterPass">
                                         	<span class="input-group-text" id="inputGroupPrepend">?</span>
                                         	<input class="form-control form-control-user" type="password" id="userPassword" placeholder="Password" name="password">
                                         </div>
+                                        <div id="authmessage"></div>
                                         <div class="mb-3">
                                         <!--    <div class="custom-control custom-checkbox small">
                                                 <div class="form-check"><input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1"><label class="form-check-label custom-control-label" for="formCheck-1">Remember Me</label></div>
                                             </div>  -->
-                                        </div><button class="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
+                                        </div><button class="btn btn-primary d-block btn-user w-100" type="submit" id="btnLogin">Login</button>
                                        	<hr>
                                     </form>
                                     <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a></div>

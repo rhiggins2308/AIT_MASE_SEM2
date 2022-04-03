@@ -1,4 +1,4 @@
-rootURL = "http://localhost:8082/AdventAles/rest/users/login";
+rootUrl = "rest/users/login";
 
 var emptyTheForm = function() {
 	$('#userEmail').empty();
@@ -61,7 +61,7 @@ var pickPage = function(data){
 function login(userEmail, userPassword) {
 	$.ajax({
 		type: 'GET',
-		url: rootURL + '/login/' + userEmail + '/' + userPassword,
+		url: rootUrl + '/login/' + userEmail + '/' + userPassword,
 		dataType: "json",
 		success: pickPage,
 		error: errorMessage 

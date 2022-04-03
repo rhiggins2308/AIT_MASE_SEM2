@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Register An Account</title>
+    <meta name="description" content="Advent Calendars, but with a twist for the more discerning interest in, not your average beer.
+										Choose from a range of products and sizes, all delivered in a cool advent calendar box, just in 
+										time for pre-Christmas refreshement"><link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">
+    
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+		
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/register.js"></script>
+</head>
+
+<body style="background:linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('assets/img/bg.jpg');">
+    <h1 class="text-center text-white d-none d-lg-block site-heading">
+			<span class="text-primary site-heading-upper mb-3">add a little zip to your christmas&nbsp;</span>
+			<span class="site-heading-lower">Advent Ales</span>
+	</h1>
+	<nav class="navbar navbar-dark navbar-expand-lg bg-dark py-lg-4" id="mainNav">
+		<div class="container">
+			<a class="navbar-brand text-uppercase d-lg-none text-expanded" href="#">AdventAles</a>
+			<button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="products.html">Products</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="store.html">Store</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login.html">Login/Register</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="cart.html">Cart</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+        <div class="card shadow-lg o-hidden border-0 my-5">
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-flex">
+                        <div class="flex-grow-1 bg-register-image" style="background-image: url(&quot;assets/img/intro.jpg&quot;);"></div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h4 class="text-dark mb-4">Create an Account!</h4>
+                            </div>
+                            <form class="user" >
+                                <div class="row mb-3">
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="firstName" placeholder="First Name" name="first_name" required></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="lastName" placeholder="Last Name" name="last_name" required></div>
+                                	<div id="noName"></div>
+                                </div>
+                                <div class="mb-3 input-group">
+                                	<span class="input-group-text" id="inputGroupPrepend">@</span>
+                                	<input class="form-control form-control-user" type="email" id="userEmail" aria-describedby="emailHelp" placeholder="Email Address" name="email" required>
+                                	<div id="invalidEmail"></div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="input-group">
+									  	<span class="input-group-text">Date of Birth</span>
+									  	<input type="number" min="1" max="31" aria-label="Day" class="form-control" id="dobDay" placeholder="Day" required>
+									  	<input type="number" min="1" max="12" aria-label="Month" class="form-control" id="dobMonth" placeholder="Month" required>
+									  	<input type="number" min="1900" max="2004"  aria-label="Year" class="form-control" id="dobYear" placeholder="Year" required>
+										<div class="invalidDOB"></div>
+									</div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="userPassword" placeholder="Password" name="password"></div>
+                                    <div class="col-sm-6 mb-3"><input class="form-control form-control-user" type="password" id="verifyPassword" placeholder="Repeat Password" name="password_repeat"></div>
+             						<div id="invalidPassword"></div>
+             						<div class="col-sm-12">
+	             						<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" id="ageCheck" required>
+										    <label class="form-check-label" for="ageCheck">
+										    	I confirm that I am over 18 years of age
+										    </label>
+										    <div id="noAgeCheck"></div>
+										</div>
+									</div>
+                                	                   	
+                                </div><button class="btn btn-primary d-block btn-user w-100" type="submit" id="btnRegister">Register Account</button>
+                                <div id="registermessage"></div>
+                                <hr>
+                            </form>
+                            <div class="text-center" id="registrationMessage"></div>
+                            <div class="text-center"><a class="small" href="login.html">Already have an account? Login!</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
