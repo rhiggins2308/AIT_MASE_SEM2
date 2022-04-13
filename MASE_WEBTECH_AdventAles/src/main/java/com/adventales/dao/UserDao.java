@@ -16,7 +16,7 @@ public class UserDao {
 
 	@PersistenceContext
 	private EntityManager em;
-	
+
 	public List<User> getAllUsers() {
 		Query query = em.createQuery("SELECT u FROM User u");
 		return query.getResultList();
