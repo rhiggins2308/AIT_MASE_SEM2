@@ -155,12 +155,12 @@
       <artifactId>picketbox</artifactId>
       <version>4.0.21.Final</version>
     </dependency>
-    <dependency>
+<!--     <dependency>
       <groupId>org.picketbox</groupId>
       <artifactId>picketbox-infinispan</artifactId>
       <version>4.0.21.Final</version>
     </dependency>
-    <dependency>
+ -->    <dependency>
       <groupId>org.picketbox</groupId>
       <artifactId>picketbox-commons</artifactId>
       <version>1.0.0.final</version>
