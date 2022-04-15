@@ -27,29 +27,13 @@ public class UserDao {
 		query.setParameter(1, email);
 		if (query.getResultList().size() == 1) {
 			return (User) query.getResultList().get(0);
+		} else {
+			throw new NullPointerException();
 		}
-		
-		return null;
 	}
 
 	public User registerUser(User user) {
 		em.persist(user);
 		return user;
 	}
-
-/*	public void delete(String userEmail) {
-		em.remove(getUserByEmail(userEmail));
-	}*/
-
-/*	public void updatePassword(User user) {
-		em.merge(user);	
-	}*/
-
-	/*
-	public List<User> getUsersBySomeCriteria(String someCriteria) {
-		Query query = em.createQuery("SELECT u FROM User u WHERE u.something LIKE ?1");
-		query.setParameter(1, "%" + someCriteria + "%");
-		return query.getResultList();
-	}
-	*/
 }

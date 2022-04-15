@@ -17,8 +17,9 @@ public class CartDao {
 	@PersistenceContext
 	private EntityManager em;
 	
-	public void addCartItem(Cart cartItem) {
+	public Cart addCartItem(Cart cartItem) {
 		em.persist(cartItem);
+		return cartItem;
 	}
 	
 	public List<Cart> getAllCartItems() {
@@ -26,8 +27,8 @@ public class CartDao {
 		return query.getResultList();
 	}
 	
-	public void emptyCart() {
+	public int emptyCart() {
 		Query query = em.createNativeQuery("DELETE FROM cart");
-		query.executeUpdate();
+		return query.executeUpdate();
 	}
 }

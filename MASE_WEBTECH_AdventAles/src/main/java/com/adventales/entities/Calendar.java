@@ -20,11 +20,11 @@ public class Calendar {
 	public int getCalId() {
 		return calId;
 	}
-
+/*
 	public void setCalId(int calId) {
 		this.calId = calId;
 	}
-
+*/
 	public String getCalType() {
 		return calType;
 	}

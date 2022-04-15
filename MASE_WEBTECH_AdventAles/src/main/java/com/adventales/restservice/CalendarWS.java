@@ -37,20 +37,4 @@ public class CalendarWS {
 		Calendar calendar = calendarDao.getCalendar(calId);
 		return Response.status(200).entity(calendar).build();
 	}
-	
-	@GET
-	@Produces ({MediaType.APPLICATION_JSON})
-	@Path("type/{type}")
-	public Response findCalendarsByType(@PathParam("type") String calType) {
-		List<Calendar> calendars = calendarDao.getCalendarsByType(calType);
-		return Response.status(200).entity(calendars).build();
-	}
-	
-	@GET
-	@Produces ({MediaType.APPLICATION_JSON})
-	@Path("cost/{cost}")
-	public Response findCalendarsByCost(@PathParam("cost") double cost) {
-		List<Calendar> calendars = calendarDao.getCalendarsByCost(cost);
-		return Response.status(200).entity(calendars).build();
-	}
 }

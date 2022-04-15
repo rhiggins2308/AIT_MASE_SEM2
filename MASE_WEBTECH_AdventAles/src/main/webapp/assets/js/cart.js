@@ -9,7 +9,6 @@ var renderList = function (data) {
 	var productCost = 0;
 	var totalShipping = 0;
 	var totalCost = 0;
-	
 	$('#cartDetails').empty();
 	$.each(data, function (index, calendar) {
 		cartItems++;
@@ -91,16 +90,4 @@ $(document).ready(function () {
 
 		return false;
 	});
-
-	/*	
-	$(document).on("click", ".btn-default", function() {
-		$('#detailsModal').modal('hide');
-	});
-	
-	$(document).on("click", ".close", function() {
-		$('#detailsModal').modal('hide');
-	});
-
-	findAll();	
-	*/
 });

@@ -27,9 +27,9 @@ public class OrderDao {
 		return query.getResultList();
 	}
 
-	public void shipOrder(int orderId) {
+	public int shipOrder(int orderId) {
 		Query query = em.createNativeQuery("UPDATE orders SET orderShipped = 1 WHERE orderId = ?1");
 		query.setParameter(1, orderId);
-		query.executeUpdate();
+		return query.executeUpdate();
 	}
 }

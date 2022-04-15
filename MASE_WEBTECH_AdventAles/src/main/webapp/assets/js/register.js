@@ -1,25 +1,5 @@
 rootUrl = "rest/users/register";
-/*
-function clearMessages() {
-	$('.text-muted').remove();
-}
 
-var clearFields = function() {
-	$("#firstName").val(null);
-  	$('#lastName').val(null);
-  	$('#userEmail').val(null);
-  	$('#dobDay').val(null);
-  	$('#dobMonth').val(null);
-	$('#dobYear').val(null);
-	$('#userPassword').val(null);	
-	$('#verifyPassword').val(null);
-};
-
-function resetPage() {
-	clearMessages();
-	clearFields();
-}
-*/
 function registerMessage(regField) {
 	$("#registermessage").append('<small class="text-muted">'
 										+ regField
@@ -63,21 +43,16 @@ function validate() {
 										+ '</small>');
 		return false;
 	}
-	console.log("all fields okay");
 	return true;
 }
 
 var successMessage = function(){
-	//resetPage();
-	//clearFields();
 	$('#registermessage').append('<div class="message" id="regSuccess">'
 									+  	'<p>User Registration Successful!<br/>Please <a href="login.html">Log in</a> to checkout'
 									+	'</p><hr></div>');
 };
 
 var errorMessage = function(){
-	//resetPage();
-	//clearFields();
 	$('#registermessage').append('<div class="message" id="regFailure">'
 									+  	'<p>User Registration Failed!<br/>Please check your details and try again'
 									+	'</p><hr></div>');
@@ -107,14 +82,10 @@ var registerUser = function () {
 };
 
 $(document).ready(function () {
-	//resetPage();
 	
 	$(document).on('click', '#btnRegister', function () {
-		//clearMessages();
 		if(validate()) {
 			registerUser();
-			//emptyTheForm();	
 		}
-		//return false;		
 	});
 });

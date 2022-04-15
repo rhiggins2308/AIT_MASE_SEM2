@@ -48,18 +48,6 @@ var formToJSON = function() {
 		"county": $('#addressCounty').val()
     });
 };
-/*
-var orderToJSON = function() {
-	return JSON.stringify({
-		"userEmail": sessionStorage.getItem("user"),
-		"orderTotal": sessionStorage.getItem("totalCost"),
-		"address1": $('#addressOne').val(),
-		"address2": $('#addressTwo').val(),
-		"town": $('#addressTown').val(),
-		"county": $('#addressCounty').val()
-    });
-};
-*/
 
 var clearCart = function () {
 	$.ajax({
@@ -82,37 +70,11 @@ var createOrder = function(){
 		}
 	});
 };
-/*
-var addOrderItems = function(data) {
-	$.ajax({
-		type: "POST",
-		contentType: 'application/json',
-		url: rootURL + "/addorderitems",
-		dataType: "json",
-		data : formToJSON(),
-		success: function (data, textStatus, jqXHR) {
-			sessionStorage.setItem("orderId", data.orderId)
-		}
-	});
-};
-
-var getOrderItems = function(orderId) {
-	$.ajax({
-		type: 'GET',
-		url: rootUrl,
-		dataType: "json",
-		success: addOrderItems(data)
-	});
-};
-*/
 
 $(document).ready(function () {
 	getPendingOrderItems();
 	$(document).on("click", "#btnOrder", function() {
 		createOrder();
-/*		if (sessionStorage.getItem("orderId") != null) {
-			getOrderItems(sessionStorage.getItem("orderId"));
-		}*/
 		return false;
 	});
 	

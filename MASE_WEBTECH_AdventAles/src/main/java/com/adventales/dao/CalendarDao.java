@@ -25,18 +25,4 @@ public class CalendarDao {
 	public Calendar getCalendar(int calId) {
 		return em.find(Calendar.class, calId);
 	}
-	
-	public List<Calendar> getCalendarsByType(String calType) {
-		Query query = em.createQuery("SELECT c FROM Calendar c WHERE c.calType = ?1");
-		query.setParameter(1, calType);
-		return query.getResultList();
-	}
-
-	public List<Calendar> getCalendarsByCost(double cost) {
-		Query query = em.createQuery("SELECT c FROM Calendar c WHERE c.cost <= ?1");
-		query.setParameter(1, cost);
-		return query.getResultList();
-	}
-
-	
 }

@@ -92,7 +92,7 @@ $(document).ready(function () {
 		return false;
 	});
 	
-	$(document).on("click", ".btn-default", function() {
+	$(document).on("click", ".btnModalClose", function() {
 		$('#detailsModal').modal('hide');
 	});
 	
